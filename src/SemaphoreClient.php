@@ -13,7 +13,7 @@ use Psr\Http\Message\StreamInterface;
  */
 class SemaphoreClient
 {
-    const API_BASE = 'https://semaphore.co/api/v4/';
+    const API_BASE = 'https://api.semaphore.co/api/v4/';
 
     public $apiKey;
     public $senderName = null;
