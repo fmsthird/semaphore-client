@@ -88,7 +88,7 @@ class SemaphoreClient
      * @return StreamInterface
      * @throws GuzzleException
      */
-    public function message( $messageId )
+    public function message($messageId)
     {
         $params = ['query' => [ 'apikey' =>  $this->apiKey ]];
         $response = $this->client->get( 'messages/' . $messageId, $params );
@@ -148,7 +148,6 @@ class SemaphoreClient
     {
         $response = $this->client->get( 'account' );
         return $response->getBody();
-
     }
 
     /**
@@ -161,7 +160,6 @@ class SemaphoreClient
     {
         $response = $this->client->get( 'account/users' );
         return $response->getBody();
-
     }
 
     /**
