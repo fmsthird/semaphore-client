@@ -61,7 +61,7 @@ class SemaphoreClient
      * @internal param null $senderId - Optional Sender ID (defaults to initialized value or SEMAPHORE)
      * @internal param bool|false $bulk - Optional send as bulk
      */
-    public function send($recipient, $message, $senderName = null)
+    public function send($recipient, $message)
     {
         $recipients = explode( ',', $recipient);
         if(count($recipients) > 1000) throw new Exception('API is limited to sending to 1000 recipients at a time');
@@ -74,8 +74,6 @@ class SemaphoreClient
                 'sendername' => $this->senderName
             ]
         ];
-
-        if(isset($senderName)) $params['form_params']['sendername'] = $senderName;
 
         $response = $this->client->post('messages', $params );
         return $response->getBody();
