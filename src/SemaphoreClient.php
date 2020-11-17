@@ -53,7 +53,6 @@ class SemaphoreClient
      *
      * @param $recipient
      * @param $message - The message you want to send
-     * @param null $senderName
      * @return StreamInterface
      * @throws GuzzleException
      * @throws Exception
